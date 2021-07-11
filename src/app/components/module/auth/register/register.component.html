@@ -1,0 +1,39 @@
+<app-auth-header></app-auth-header>
+
+
+<div>
+  <div class="container cont_st">
+    <div class="form_st animate__animated animate__fadeIn col-md-7">
+      <form (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="form-group input_documentNumber_st animate__animated animate__fadeInUp">
+          <label for="documentNumber">Usuario</label>
+          <input class="form-control mt-1" type="text" id="documentNumber" name="documentNumber" minlength="4" placeholder="Ingrese el número de documento" #documentNumber="ngModel" [(ngModel)]="customer.documentNumber" [ngClass]="{'is-valid': !documentNumber.invalid, 'is-invalid':documentNumber.invalid && (documentNumber.dirty || documentNumber.touched)}" required>
+          <div class="invalid-feedback" *ngIf="documentNumber.invalid && (documentNumber.dirty || documentNumber.touched)">
+            <div *ngIf="documentNumber.errors?.minlength">
+              Introduzca un número de documento con 4 caracteres mínimo
+            </div>
+            <div *ngIf="documentNumber.errors?.required">
+              El número de documento es requerido
+            </div>
+          </div>
+        </div>
+        <div class="form-group mt-2 input_password_st animate__animated animate__fadeInUp">
+          <label for="password">Contraseña</label>
+          <input class="form-control mt-1" type="password" id="password" name="password" minlength="4" placeholder="Ingrese la contraseña" #password="ngModel" [(ngModel)]="customer.password" [ngClass]="{'is-valid': !password.invalid, 'is-invalid':password.invalid && (password.dirty || password.touched)}" required>
+          <div class="invalid-feedback" *ngIf="password.invalid && (password.dirty || password.touched)">
+            <div *ngIf="password.errors?.minlength">
+              Introduzca una contraseña con 4 caracteres mínimo
+            </div>
+            <div *ngIf="password.errors?.required">
+              La contraseña es requerida
+            </div>
+          </div>
+        </div>
+        <div class="form-group mt-5 btn_submit_st animate__animated animate__fadeInUp">
+          <button type="submit" class="btn btn-success btn_st" [disabled]="!form.valid">Registrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

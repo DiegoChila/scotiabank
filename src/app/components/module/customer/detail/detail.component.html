@@ -1,0 +1,75 @@
+<app-customer-header></app-customer-header>
+
+<div>
+  <div class="container cont_st">
+    <div class="form_st animate__animated animate__fadeIn col-md-7">
+      <form (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="form-group input_name_st animate__animated animate__fadeInUp">
+          <label for="name">Nombre</label>
+          <input class="form-control mt-1" type="text" id="name" name="name" minlength="4" placeholder="Ingrese el nombre" #name="ngModel" [(ngModel)]="detailCustomer.name" [ngClass]="{'is-valid': !name.invalid, 'is-invalid':name.invalid && (name.dirty || name.touched)}" required>
+          <div class="invalid-feedback" *ngIf="name.invalid && (name.dirty || name.touched)">
+            <div *ngIf="name.errors?.minlength">
+              Introduzca un nombre con 4 caracteres mínimo
+            </div>
+            <div *ngIf="name.errors?.required">
+              El nombre es requerido
+            </div>
+          </div>
+        </div>
+        <div class="form-group mt-2 input_lastname_st animate__animated animate__fadeInUp">
+          <label for="lastname">Apellido</label>
+          <input class="form-control mt-1" type="lastname" id="lastname" name="lastname" minlength="4" placeholder="Ingrese el apellido" #lastname="ngModel" [(ngModel)]="detailCustomer.lastname" [ngClass]="{'is-valid': !lastname.invalid, 'is-invalid':lastname.invalid && (lastname.dirty || lastname.touched)}" required>
+          <div class="invalid-feedback" *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)">
+            <div *ngIf="lastname.errors?.minlength">
+              Introduzca un apellido con 4 caracteres mínimo
+            </div>
+            <div *ngIf="lastname.errors?.required">
+              El apellido es requerido
+            </div>
+          </div>
+        </div>
+        <div class="form-group mt-2 input_address_st animate__animated animate__fadeInUp">
+          <label for="name">Dirección</label>
+          <input class="form-control mt-1" type="text" id="address" name="address" minlength="4" placeholder="Ingrese la dirección" #address="ngModel" [(ngModel)]="detailCustomer.address" [ngClass]="{'is-valid': !address.invalid, 'is-invalid':address.invalid && (address.dirty || address.touched)}" required>
+          <div class="invalid-feedback" *ngIf="address.invalid && (address.dirty || address.touched)">
+            <div *ngIf="address.errors?.minlength">
+              Introduzca una dirección con 4 caracteres mínimo
+            </div>
+            <div *ngIf="address.errors?.required">
+              La dirección es requerida
+            </div>
+          </div>
+        </div>
+        <div class="form-group mt-2 input_phone_st animate__animated animate__fadeInUp">
+          <label for="name">Teléfono</label>
+          <input class="form-control mt-1" type="text" id="phone" name="phone" minlength="4" placeholder="Ingrese el teléfono" #phone="ngModel" [(ngModel)]="detailCustomer.phone" [ngClass]="{'is-valid': !phone.invalid, 'is-invalid':phone.invalid && (phone.dirty || phone.touched)}" required>
+          <div class="invalid-feedback" *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+            <div *ngIf="phone.errors?.minlength">
+              Introduzca un teléfono con 4 caracteres mínimo
+            </div>
+            <div *ngIf="phone.errors?.required">
+              El teléfono es requerido
+            </div>
+          </div>
+        </div>
+        <div class="form-group mt-2 input_profession_st animate__animated animate__fadeInUp">
+          <label for="name">Profesión</label>
+          <input class="form-control mt-1" type="text" id="profession" name="profession" minlength="4" placeholder="Ingrese la profesión" #profession="ngModel" [(ngModel)]="detailCustomer.profession" [ngClass]="{'is-valid': !profession.invalid, 'is-invalid':profession.invalid && (profession.dirty || profession.touched)}" required>
+          <div class="invalid-feedback" *ngIf="profession.invalid && (profession.dirty || profession.touched)">
+            <div *ngIf="profession.errors?.minlength">
+              Introduzca una profesión con 4 caracteres mínimo
+            </div>
+            <div *ngIf="profession.errors?.required">
+              La profesión es requerida
+            </div>
+          </div>
+        </div>
+        <div class="form-group mt-5 btn_submit_st animate__animated animate__fadeInUp">
+          <button type="submit" class="btn btn-success btn_st" [disabled]="!form.valid">Actualizar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
